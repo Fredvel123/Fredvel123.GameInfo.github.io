@@ -16,7 +16,7 @@ function GameApiHome() {
   }
   // function to get the Api from the api games.
   const [GameInfo, setGameInfo] = useState([]);
-  const urlApiMain = `https://api.rawg.io/api/games?key=855092981e8e43ab9ec41f33b09165f9&search=${input.titleGame}&search_precise`;
+  const urlApiMain = `https://api.rawg.io/api/games?key=855092981e8e43ab9ec41f33b09165f9&search=${input.titleGame}`;
   const getApi = async () => {
     const urlApi = await fetch(urlApiMain);
     const res_json = await urlApi.json();
@@ -27,37 +27,39 @@ function GameApiHome() {
     getApi();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+  const [genre, setGenre] = useState([]);
   const sendInfoSearch = e => {
     e.preventDefault();
-    //sendInput();
     getApi();
     //console.log(input);
-    //console.log(GameInfo);
+    //console.log(GameInfo[0].genres);
+    setGenre(GameInfo[0].genres);
+    console.log(genre);
   }
   return (
     <Fragment>
       <form
         action=""
-        className="py-3 px-3 bg-dark text-light"
         onSubmit={sendInfoSearch}
       >
-        <div className="p-2 input-group">
-          <span htmlFor="" className="input-group-text">
+        <div >
+          <span htmlFor="" >
             search a video Game:
           </span>
           <input
             type="text"
-            className="form-control"
             placeholder="type any video game here!"
             name="titleGame"
             value={input.titleGame}
             onChange={sendInput}
           />
-          <button className="btn btn-outline-light ml-2">Search</button>
+          <button >Search</button>
         </div>
       </form>
       
-      <Cards gameInfo = {GameInfo}/>
+      <Cards 
+        gameInfo={GameInfo} 
+        genres={genre} />
     </Fragment>
   );  
 }

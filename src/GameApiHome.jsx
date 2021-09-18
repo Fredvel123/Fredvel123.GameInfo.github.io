@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Cards from './component/Cards'
 import Pagination from './component/Pagination';
-
+import './component/stylesCss/form.css'
 function GameApiHome() {
   // function to get the info for the input.
   const [input, setInput] = useState({
@@ -44,10 +44,10 @@ function GameApiHome() {
   }
   return (
     <Fragment>
-      <div>
-        <form action="" onSubmit={sendInfoSearch}>
-          <div>
-            <span htmlFor="">search a video Game:</span>
+      <div className="body">
+        <form action="" onSubmit={sendInfoSearch} className="form">
+          <div className="search">
+            
             <input
               type="text"
               placeholder="type any video game here!"
@@ -55,7 +55,7 @@ function GameApiHome() {
               value={input.titleGame}
               onChange={sendInput}
             />
-            <button>Search</button>
+            
           </div>
         </form>
         

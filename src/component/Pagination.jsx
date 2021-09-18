@@ -1,14 +1,15 @@
 import React, { Fragment } from 'react'
 
+
 function Pagination({pagination, next, prev}) {
   
   return (
     <Fragment>
       {pagination ? (
-        <div>
-          {pagination.previous ? <button onClick={prev}>Previous page</button> : null}
+        <div className="next-prev">
+          {pagination.previous ? <p href="#!" onClick={prev}  className="btn-next">Previous page</p> : null}
           
-          {pagination.next ? <button onClick={next} >Next page</button> : null}
+          {pagination.next ? <p href="#!" onClick={next}  className="btn-next">Next page</p> : null}
 
         </div>
       ) : null}

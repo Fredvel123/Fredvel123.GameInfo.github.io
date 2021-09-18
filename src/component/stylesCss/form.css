@@ -1,7 +1,5 @@
 .form {
-    padding: 10px 10px;
-    height: 100px;
-    
+    padding: 10px 10px;    
     background: rgb(27, 27, 27);
     display: flex;
     justify-content: center;
@@ -11,12 +9,9 @@
 .search {
     width: 100%;
 }
-.form span {
-    background: #e2e1e1;
-}
-.form input[type=text] {
-    margin-left: 2rem;
-    width: 60%;
+.form input {
+    
+    width: 90%;
     color: rgb(35, 44, 56);
     background-color: rgb(75, 75, 75);
     outline: none;
@@ -45,6 +40,7 @@
     align-items: center;   
     cursor: pointer;
     margin: 25px 10px;
+    transition: .3s;
 }
 
 .btn-next:hover {

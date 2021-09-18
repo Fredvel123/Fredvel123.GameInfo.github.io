@@ -1,7 +1,11 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import Cards from './component/Cards'
+// import the components
+import Cards from './component/Cards';
 import Pagination from './component/Pagination';
-import './component/stylesCss/form.css'
+// import styles css and images
+import './component/stylesCss/form.css';
+import './component/stylesCss/header.css';
+import img from './component/img/menu.png'
 function GameApiHome() {
   // function to get the info for the input.
   const [input, setInput] = useState({
@@ -44,7 +48,8 @@ function GameApiHome() {
   }
   return (
     <Fragment>
-      <div className="body">
+      <header className="header">
+        <div className="logo"><h1>Game Info App</h1></div>
         <form action="" onSubmit={sendInfoSearch} className="form">
           <div className="search">
             
@@ -58,12 +63,23 @@ function GameApiHome() {
             
           </div>
         </form>
+
+        <div className="menu">
+          <ul>
+            <a href="#!">Genres</a>
+            <a href="#!">Platforms</a>
+            <a href="#!">Games</a>
+          </ul>
+        </div>
+        <div className="icon">
+          <img src={img} alt="" width="60px"/>
+        </div>
+      </header>
         
         <Pagination pagination={pagination} next={onNext} prev={onPrev} />
         <Cards gameInfo={GameInfo}/>
         <Pagination pagination={pagination} next={onNext} prev={onPrev} />
         
-      </div>
     </Fragment>
   );  
 }

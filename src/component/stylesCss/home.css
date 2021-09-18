@@ -3,11 +3,9 @@
     padding: 0;
     text-decoration: none;
     list-style: none;
+    
 } 
 html {
     background-color: #efefef;
-}
-.title-home {
-    color: royalblue;
-    
+    width: 100%;
 }

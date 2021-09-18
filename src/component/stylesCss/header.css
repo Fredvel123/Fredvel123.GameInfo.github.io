@@ -1,0 +1,17 @@
+.header {
+    background: chartreuse;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 65% 15%;
+    grid-template-rows: 120px;
+}
+.menu {
+    display: none;
+}
+.logo {
+    margin: auto;    
+}
+.icon {
+    margin: auto;
+   
+}

@@ -2,17 +2,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    
-    gap: 1rem;
-
+    width: 100%;
 }
 .cards img {
-    
     width: 100%;
-    
 }
-.cards {
-    
+.cards {    
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     margin: 0.75rem 1rem;
     width: 280px;
@@ -29,7 +24,6 @@
     cursor: pointer;
 }
 .cards-text {
-    
     width: 100%;
     height: 100%;
     padding: 10px 8px;

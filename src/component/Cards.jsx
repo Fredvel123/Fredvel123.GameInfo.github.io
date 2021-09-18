@@ -14,14 +14,15 @@ function Cards({ gameInfo, genres }) {
                   alt={item.name}
                   width="100px"
                 />
-                <div>
+                <div className="cards-text">
                   <h4>VideoGame Name: {item.name}</h4>
                   <p>Released date: {item.released}</p>
-                  <div>
+                  <p>
                     Genres Game:
-                    {genres.map(element => (<p>{element.name}</p>)) }
-                    
-                  </div>
+                    {genres.map((element) => (
+                      <p>{element.name}</p>
+                    ))}
+                  </p>
                 </div>
               </div>
             ))

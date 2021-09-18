@@ -37,21 +37,18 @@ function GameApiHome() {
   }
   return (
     <Fragment>
-      <div className="bg-secondary">
-        <form action="" onSubmit={sendInfoSearch} className="py-3 bg-info">
-          <div className="input-group py-2 px-1">
-            <span htmlFor="" className="input-group-text">
-              search a video Game:
-            </span>
+      <div>
+        <form action="" onSubmit={sendInfoSearch}>
+          <div>
+            <span htmlFor="">search a video Game:</span>
             <input
               type="text"
               placeholder="type any video game here!"
               name="titleGame"
               value={input.titleGame}
               onChange={sendInput}
-              className="form-control"
             />
-            <button className="btn btn-primary">Search</button>
+            <button>Search</button>
           </div>
         </form>
 

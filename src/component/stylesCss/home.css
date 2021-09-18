@@ -6,6 +6,9 @@
     
 } 
 html {
-    background-color: #efefef;
+    
     width: 100%;
+}
+body {
+    background-color: #172944;
 }

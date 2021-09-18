@@ -46,6 +46,11 @@ function GameApiHome() {
     e.preventDefault();
     getApi(urlApiMain);
   }
+  // function to the menu.
+  const [open, setopen] = useState(false);
+  const openCloseMenu = () => {
+    setopen(!open);
+  }
   return (
     <Fragment>
       <header className="header">
@@ -63,17 +68,18 @@ function GameApiHome() {
             
           </div>
         </form>
+        <div className="icon">
+          <img src={img} alt="" width="60px" onClick={openCloseMenu}/>
+        </div>
 
-        <div className="menu">
+        <div className={open  ? "menu" : "menu2"} >
           <ul>
             <a href="#!">Genres</a>
             <a href="#!">Platforms</a>
             <a href="#!">Games</a>
           </ul>
         </div>
-        <div className="icon">
-          <img src={img} alt="" width="60px"/>
-        </div>
+
       </header>
         
         <Pagination pagination={pagination} next={onNext} prev={onPrev} />

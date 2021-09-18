@@ -2,7 +2,7 @@
     background: rgb(27, 27, 27);
     width: 100%;
     display: grid;
-    grid-template-columns: 20% 65% 15%;
+    grid-template-columns: 20% 70% 10%;
     grid-template-rows: 120px 0;
 }
 

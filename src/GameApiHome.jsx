@@ -25,8 +25,9 @@ function GameApiHome() {
   const getApi = async (url) => {
     const urlApi = await fetch(url);
     const res_json = await urlApi.json();
-    setPagination(res_json)
+    setPagination(res_json);
     setGameInfo(res_json.results);
+    
   } 
   useEffect(() => {
     getApi(urlApiMain );
@@ -41,7 +42,7 @@ function GameApiHome() {
   const onPrev = () => {
     getApi(pagination.previous);
   }
-
+  
   const sendInfoSearch = e => {
     e.preventDefault();
     getApi(urlApiMain);
@@ -51,6 +52,7 @@ function GameApiHome() {
   const openCloseMenu = () => {
     setopen(!open);
   }
+  // const fullGenreApi =('https://api.rawg.io/api/genres?key=855092981e8e43ab9ec41f33b09165f9');
   return (
     <Fragment>
       <header className="header">

@@ -27,13 +27,12 @@ function GameApiHome() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   const [genre, setGenre] = useState([]);
+  
   const sendInfoSearch = e => {
     e.preventDefault();
     getApi();
-    //console.log(input);
-    //console.log(GameInfo[0].genres);
-    setGenre(GameInfo[0].genres);
-    console.log(genre);
+    setGenre(GameInfo[0].genres); 
+     console.log(genre);
   }
   return (
     <Fragment>

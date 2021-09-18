@@ -17,12 +17,12 @@ function Cards({ gameInfo, genres }) {
                 <div className="cards-text">
                   <h4>VideoGame Name: {item.name}</h4>
                   <p>Released date: {item.released}</p>
-                  <p>
+                  <div>
                     Genres Game:
-                    {genres.map((element) => (
-                      <p>{element.name}</p>
-                    ))}
-                  </p>
+                    {genres ? genres.map((element) => (
+                      <p key={element.id}>{element.name}</p>
+                    )) : genres}
+                  </div>
                 </div>
               </div>
             ))

@@ -12,7 +12,6 @@ function GameApiHome() {
       ...prevInput,
       [name] : value
     }) )
-
   }
   // function to get the Api from the api games.
   const [GameInfo, setGameInfo] = useState([]);
@@ -38,28 +37,26 @@ function GameApiHome() {
   }
   return (
     <Fragment>
-      <form
-        action=""
-        onSubmit={sendInfoSearch}
-      >
-        <div >
-          <span htmlFor="" >
-            search a video Game:
-          </span>
-          <input
-            type="text"
-            placeholder="type any video game here!"
-            name="titleGame"
-            value={input.titleGame}
-            onChange={sendInput}
-          />
-          <button >Search</button>
-        </div>
-      </form>
-      
-      <Cards 
-        gameInfo={GameInfo} 
-        genres={genre} />
+      <div className="bg-secondary">
+        <form action="" onSubmit={sendInfoSearch} className="py-3 bg-info">
+          <div className="input-group py-2 px-1">
+            <span htmlFor="" className="input-group-text">
+              search a video Game:
+            </span>
+            <input
+              type="text"
+              placeholder="type any video game here!"
+              name="titleGame"
+              value={input.titleGame}
+              onChange={sendInput}
+              className="form-control"
+            />
+            <button className="btn btn-primary">Search</button>
+          </div>
+        </form>
+
+        <Cards gameInfo={GameInfo} genres={genre} />
+      </div>
     </Fragment>
   );  
 }

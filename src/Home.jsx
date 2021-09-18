@@ -4,9 +4,8 @@ import GameApiHome from './GameApiHome';
 function Home() {
   return (
     <Fragment>
-      <GameApiHome className="bg-secondary"/>
+      <GameApiHome />
     </Fragment>
   );
 }
-
 export default Home;

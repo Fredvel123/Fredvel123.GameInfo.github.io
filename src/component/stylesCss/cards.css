@@ -1,0 +1,15 @@
+.cards-background {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.cards img {
+    width: 280px;
+}
+.cards {
+    background-color: cornflowerblue;
+    margin: 0.75rem 0;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+}

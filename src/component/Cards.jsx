@@ -1,13 +1,14 @@
 import React, { Fragment } from "react";
+import './stylesCss/cards.css' 
 
 function Cards({ gameInfo, genres }) {
   //console.log(genres);
   return (
     <Fragment>
-      <div>
+      <div className="cards-background">
         {gameInfo
           ? gameInfo.map((item, index) => (
-              <div key={index}>
+              <div key={index} className="cards">
                 <img
                   src={item.background_image}
                   alt={item.name}
@@ -18,9 +19,8 @@ function Cards({ gameInfo, genres }) {
                   <p>Released date: {item.released}</p>
                   <div>
                     Genres Game:
-                    {genres
-                      ? genres.map((element) => <p> {element.name}</p>)
-                      : !genres}
+                    {genres.map(element => (<p>{element.name}</p>)) }
+                    
                   </div>
                 </div>
               </div>

@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Cards from './component/Cards'
+import Pagination from './component/Pagination';
 
 function GameApiHome() {
   // function to get the info for the input.
@@ -15,24 +16,31 @@ function GameApiHome() {
   }
   // function to get the Api from the api games.
   const [GameInfo, setGameInfo] = useState([]);
+  const [pagination, setPagination] = useState([])
   const urlApiMain = `https://api.rawg.io/api/games?key=855092981e8e43ab9ec41f33b09165f9&search=${input.titleGame}`;
-  const getApi = async () => {
-    const urlApi = await fetch(urlApiMain);
+  const getApi = async (url) => {
+    const urlApi = await fetch(url);
     const res_json = await urlApi.json();
+    setPagination(res_json)
     setGameInfo(res_json.results);
   } 
-  //const solutionFetch = useRef(getApi);
   useEffect(() => {
-    getApi();
+    getApi(urlApiMain );
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  const [genre, setGenre] = useState([]);
-  
+  // function to next the page.
+  const onNext = () => {
+    getApi(pagination.next);
+    // setGameInfo(pagination.results)
+  }
+  const onPrev = () => {
+    getApi(pagination.previous);
+  }
+
   const sendInfoSearch = e => {
     e.preventDefault();
-    getApi();
-    setGenre(GameInfo[0].genres); 
-     console.log(genre);
+    getApi(urlApiMain);
   }
   return (
     <Fragment>
@@ -50,8 +58,11 @@ function GameApiHome() {
             <button>Search</button>
           </div>
         </form>
-
-        <Cards gameInfo={GameInfo} genres={genre} />
+        
+        <Pagination pagination={pagination} next={onNext} prev={onPrev} />
+        <Cards gameInfo={GameInfo}/>
+        <Pagination pagination={pagination} next={onNext} prev={onPrev} />
+        
       </div>
     </Fragment>
   );  

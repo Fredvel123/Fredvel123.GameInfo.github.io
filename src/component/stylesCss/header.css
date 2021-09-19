@@ -2,7 +2,7 @@
     background: rgb(27, 27, 27);
     width: 100%;
     display: grid;
-    grid-template-columns: 20% 70% 10%;
+    grid-template-columns: 35% 65%;
     grid-template-rows: 120px 0;
 }
 
@@ -12,11 +12,17 @@
 }
 .logo h1 {
     color: #fff;
-    font-size: 20px;
+    font-size: 35px;
     font-family: Arial, Helvetica, sans-serif;
+}
+@media screen and (max-width: 750px) {
+    .logo h1 {
+        font-size: 20px;
+    }
 }
 .icon {
     margin: auto;
+    display: none;
 }
 
 
@@ -34,23 +40,75 @@ ul {
     align-content: space-between;
     margin: 25px 0;
 }
-.menu {
-    background: rgba(58, 58, 58, 0.781);
-    
-    top: 120px;
-    left: 0;
 
-    position: absolute;
-    width: 60%;
-    height: 85vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(0);
+@media screen and (max-width: 400px) {
+    .header {
+        background: rgb(27, 27, 27);
+        width: 100%;
+        display: grid;
+        grid-template-columns: 65% 35%;
+        grid-template-rows: 120px 0;
+    }
+
+    .icon {
+        margin: auto;
+        display: block;
+    }
+    .form1 {
+        display: none;
+    }
+    .menu {
+        background: rgba(58, 58, 58, 0.781);
+        top: 120px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(0);
+        transition: all .5s;
+    }
+    .menu2 {
+        display: none;
+        transition:all .5s;
+        transform: translateX(-100%);
+    }
+
+    .form2 {
+        padding: 10px 10px;    
+        background: rgb(27, 27, 27);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap:wrap ;
+        width: 94%;
+    }
+    .search {
+        display: flex;
+        align-items: center;
+        height: 100px;
+        width: 100%;
+    }
+    .form2 input {
+        height: 40px;
+        width: 90%;
+        color: rgb(35, 44, 56);
+        background-color: rgb(75, 75, 75);
+        outline: none;
+        border-radius: 100px;
+        font-size: 14px;
+        padding: 7px 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 0;
+        transition: .5s;
+    }
+    .form2 input:focus {
+        background-color: #fdfdfd;
+    }
+    .form2 input:hover { 
+        background-color: #fdfdfd;
+    }
     
-    transition: .5s;
-}
-.menu2 {
-    transition: .2s;
-    transform: translateX(-100%);
 }

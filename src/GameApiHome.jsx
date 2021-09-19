@@ -5,7 +5,7 @@ import Pagination from './component/Pagination';
 // import styles css and images
 import './component/stylesCss/form.css';
 import './component/stylesCss/header.css';
-import img from './component/img/menu.png'
+import img from './component/img/search.png'
 function GameApiHome() {
   // function to get the info for the input.
   const [input, setInput] = useState({
@@ -46,6 +46,7 @@ function GameApiHome() {
   const sendInfoSearch = e => {
     e.preventDefault();
     getApi(urlApiMain);
+    setopen(!open)
   }
   // function to the menu.
   const [open, setopen] = useState(false);
@@ -57,16 +58,17 @@ function GameApiHome() {
     <Fragment>
       <header className="header">
         <div className="logo"><h1>Game Info App</h1></div>
-        <form action="" onSubmit={sendInfoSearch} className="form">
+        <form action="" onSubmit={sendInfoSearch} className="form1">
           <div className="search">
             
             <input
               type="text"
-              placeholder="type any video game here!"
+              placeholder="Do you want to search a Video Game?"
               name="titleGame"
               value={input.titleGame}
               onChange={sendInput}
             />
+            
             
           </div>
         </form>
@@ -74,12 +76,20 @@ function GameApiHome() {
           <img src={img} alt="" width="60px" onClick={openCloseMenu}/>
         </div>
 
-        <div className={open  ? "menu" : "menu2"} >
-          <ul>
-            <a href="#!">Genres</a>
-            <a href="#!">Platforms</a>
-            <a href="#!">Games</a>
-          </ul>
+        <div className={open ? "menu2" : "menu"} >
+        <form action="" onSubmit={sendInfoSearch} className="form2">
+          <div className="search">
+            
+            <input
+              type="text"
+              placeholder="Do you want to search a Video Game?"
+              name="titleGame"
+              value={input.titleGame}
+              onChange={sendInput}
+            />
+            <p className="btn-next" onClick={sendInfoSearch}>Search</p>
+          </div>
+        </form>
         </div>
 
       </header>

@@ -8,6 +8,7 @@
 .cards img {
     width: 100%;
 }
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 .cards {    
     background: #fff;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -17,7 +18,7 @@
     flex-direction: column;
     transition: .3s;
     flex-grow: 1;
-    
+    font-family: 'Ubuntu', sans-serif;
 }
 .cards:hover{
     box-shadow: -1px 0px 14px 2px rgba(0,0,0,0.75);
@@ -30,4 +31,12 @@
     height: 100%;
     padding: 10px 8px;
     box-sizing: border-box;
+}
+.genres {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.genres-text {
+    margin-left: 5px;
 }

@@ -7,9 +7,9 @@ function Pagination({pagination, next, prev}) {
     <Fragment>
       {pagination ? (
         <div className="next-prev">
-          {pagination.previous ? <p href="#!" onClick={prev}  className="btn-next">Previous page</p> : null}
+          {pagination.previous ? <p href="#!" onClick={prev}  className="btn-next">Previous</p> : null}
           
-          {pagination.next ? <p href="#!" onClick={next}  className="btn-next">Next page</p> : null}
+          {pagination.next ? <p href="#!" onClick={next}  className="btn-next">Next</p> : null}
 
         </div>
       ) : null}

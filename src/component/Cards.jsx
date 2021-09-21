@@ -20,7 +20,7 @@ function Cards({ gameInfo }) {
                   <p> <span>VideoGame Name:</span> {item.name}</p>
                   <p> <span>Released date:</span>  {item.released}</p>
                   <p> <span>Updaded: </span> {item.updated}</p>
-                  <div className="genres"> <span> Game Genres:</span>   {item.genres.map(element => <p className="genres-text">{element.name} </p> )} </div>
+                  <div className="genres"> <span> Game Genres:</span>   {item.genres.map((element, index) => <p key={index} className="genres-text">{element.name} </p> )} </div>
                 </div>
               </div>
             ))

@@ -47,8 +47,10 @@
     transition: .3s;
 }
 
+
 .btn-next:hover {
-    background-color: crimson;
+    color: #fff;
+    background: crimson !important;
 }
 
 .next-prev {

@@ -56,7 +56,7 @@ function GameApiHome() {
   // const fullGenreApi =('https://api.rawg.io/api/genres?key=855092981e8e43ab9ec41f33b09165f9');
   return (
     <Fragment>
-      <header className="header">
+      <header className="header" id="header">
         <div className="logo"><h1>Game Info App</h1></div>
         <form action="" onSubmit={sendInfoSearch} className="form1">
           <div className="search">

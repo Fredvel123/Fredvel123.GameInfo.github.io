@@ -17,10 +17,10 @@ function Cards({ gameInfo }) {
                   width="100px"
                 />
                 <div className="cards-text">
-                  <h4>VideoGame Name: {item.name}</h4>
-                  <p>Released date: {item.released}</p>
-                  <p>Updaded: {item.updated}</p>
-                  <div className="genres">Game Genres: {item.genres.map(element => <p className="genres-text">{element.name} </p> )} </div>
+                  <p> <span>VideoGame Name:</span> {item.name}</p>
+                  <p> <span>Released date:</span>  {item.released}</p>
+                  <p> <span>Updaded: </span> {item.updated}</p>
+                  <div className="genres"> <span> Game Genres:</span>   {item.genres.map(element => <p className="genres-text">{element.name} </p> )} </div>
                 </div>
               </div>
             ))
